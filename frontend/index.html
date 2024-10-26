@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Reservas de Abogados</title>
+  <link rel="stylesheet" href="miStyles.css">
+</head>
+<body>
+  <h1 class="center"> Sistema Reserva de Citas para Abogados </h1>
+  
+  <form id="reservaForm">
+    <label for="clienteNombre">Nombre del Cliente:</label>
+    <input type="text" id="clienteNombre" name="clienteNombre" required>
+
+    <label for="clienteEmail">Correo Electrónico:</label>
+    <input type="email" id="clienteEmail" name="clienteEmail" required>
+
+    <label for="especialidad">Especialidad:</label>
+    <select id="especialidad" name="especialidad" required>
+      <option value="">--Selecciona Especialidad--</option>
+      <option value="Civil">Derecho Civil</option>
+      <option value="Penal">Derecho Penal</option>
+      <option value="Laboral">Derecho Laboral</option>
+    </select>
+
+    <label for="abogado">Abogado:</label>
+    <select id="abogado" name="abogado" required disabled>
+      <option value="">--Selecciona un abogado--</option>
+    </select>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora" required>
+
+    <button type="submit">Reservar</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <script src="reservas.js"></script>
+  <script src="abogados.js"></script>
+</body>
+</html>

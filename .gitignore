@@ -1,0 +1,149 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+logs/
+*.log
+*.log.*
+log/
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# dotenv environment variables file
+.env
+.env.local
+.env.*.local
+
+# Swagger auto-generated files
+swagger.json
+swagger.yaml
+
+# Debugging and cache files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+.vscode/*
+*.log
+
+# Coverage directory used by testing tools like jest or nyc
+coverage/
+*.lcov
+
+# Output of npm build process
+dist/
+build/
+out/
+
+# Optional npm cache directory
+.npm/
+
+# MacOS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows-specific files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Directories for backups or temporary files
+*.bak
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+*.pyc
+__pycache__/
+
+# Generated lock files by IDEs or text editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Frontend build artifacts (optional depending on your frontend framework)
+public/
+.eslintcache
+
+# Optional IDE project files
+*.code-workspace
+*.iml
+
+# Temporary files created during compilation or development
+*.sass-cache/
+.parcel-cache/
+.cache-loader/
+.temporary/
+
+# Static files and assets
+public/assets/
+public/css/
+public/js/
+
+# Git hooks
+.husky/
+
+# Linting or formatting files
+.prettierrc
+.eslintrc.js
+
+# Test report files (optional if using jest, mocha, etc.)
+test-results.xml
+jest-report.xml
+cypress/screenshots/
+cypress/videos/
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+# Logs
+logs/
+*.log
+# Ignorar bases de datos temporales
+/base_de_datos/*.json
+
+# Directorios de la herramienta de testing (si aplicas)
+cypress/screenshots/
+cypress/videos/
+
+# Configuración local y scripts de entorno
+.env
+.env.local
+.env.*.local
+.husky/
+.prettier
+.eslintcache
+.eslint*
+
+/backend/node_modules
+/frontend/node_modules
+
+# Archivos temporales
+.DS_Store
+Thumbs.db
+
+# Test results
+test-results/
+jest-report.xml
+
+# Output de build (si estás haciendo builds)
+dist/
+build/
+
+# Visual Studio Code settings
+.vscode/
