@@ -35,7 +35,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 let reservas = [];
 
 // Cargar reservas desde el archivo JSON
-fs.readFile('../base_de_datos/reservas.json', 'utf8', (err, data) => {
+fs.readFile('../database/reservas.json', 'utf8', (err, data) => {
   if (err) {
     console.error('Error al leer el archivo reservas.json:', err);
   } else {
@@ -50,7 +50,7 @@ fs.readFile('../base_de_datos/reservas.json', 'utf8', (err, data) => {
 
 // Guardar reservas en el archivo JSON
 function guardarReservas() {
-  fs.writeFileSync('../base_de_datos/reservas.json', JSON.stringify(reservas, null, 2));
+  fs.writeFileSync('../database/reservas.json', JSON.stringify(reservas, null, 2));
 }
 
 // Enviar notificación de reserva (simulada)
@@ -217,7 +217,7 @@ app.get('/citas', (req, res) => {
  *                     description: Hora de la cita
  */
 app.get('/ver-reservas', (req, res) => {
-  fs.readFile('../base_de_datos/reservas.json', 'utf8', (err, data) => {
+  fs.readFile('../database/reservas.json', 'utf8', (err, data) => {
     if (err) {
       return res.status(500).json({ message: 'Error al leer el archivo de reservas' });
     }

@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./database:/database  # Monta la carpeta 'database' en la ruta raíz del contenedor
+    networks:
+      - legalops-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    networks:
+      - legalops-network
+
+networks:
+  legalops-network:
+    driver: bridge
+
