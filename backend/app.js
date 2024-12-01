@@ -1,3 +1,5 @@
+const Sentry = require('@sentry/node');
+const { ProfilingIntegration } = require('@sentry/profiling-node');
 const express = require('express');
 const fs = require('fs');
 const cors = require('cors');
@@ -6,7 +8,12 @@ const app = express();
 const PORT = 3000;
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
-
+Sentry.init({
+  dsn:"https://bf688513625d7ada7768307d9f31daa3@o4508393825239040.ingest.us.sentry.io/4508394262888448",
+  integrations: [new ProfilingIntegration()],
+  tracesSampleRate: 1.0, // Ajusta según lo que desees rastrear.
+  profilesSampleRate: 1.0, // Ajusta según el nivel de perfiles que quieras capturar.
+});
 // Swagger configuration
 const swaggerOptions = {
   definition: {
@@ -29,6 +36,7 @@ const swaggerDocs = swaggerJsdoc(swaggerOptions);
 
 app.use(cors());
 app.use(express.json());
+app.use(Sentry.Handlers.requestHandler());
 app.use(express.static('../frontend')); // Serve frontend from corresponding folder
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
@@ -230,7 +238,7 @@ app.get('/ver-reservas', (req, res) => {
     }
   });
 });
-
+app.use(Sentry.Handlers.errorHandler());
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
