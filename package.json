@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@sentry/node": "^8.41.0",
-    "@sentry/profiling-node": "^8.41.0"
-  }
-}
