@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "LegalOps-CI-Pipeline",
   "main": "index.js",
-  "devDependencies": {
-    "codecov": "^3.8.3",
-    "mocha": "^10.8.2",
-    "nyc": "^17.1.0"
-  },
   "scripts": {
     "test": "mocha ./database/tests/reservas.test.js"
+  },
+  "devDependencies": {
+    "mocha": "^10.8.2"
   },
   "keywords": [],
   "author": "",
   "license": "ISC"
 }
+
