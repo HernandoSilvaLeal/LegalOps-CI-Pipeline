@@ -1,16 +1,15 @@
 {
+  "name": "reservas",
+  "version": "1.0.0",
   "main": "reservas.js",
   "scripts": {
-    "test": "mocha", 
+    "test": "mocha",
     "coverage": "nyc npm test",
-    "upload-coverage": "nyc report --reporter=text-lcov | codecov",
-    "dev": "nodemon app.js",
-    "start": "node app.js"
+    "upload-coverage": "nyc report --reporter=text-lcov | codecov"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@sentry/node": "^8.41.0",
     "@sentry/profiling-node": "^8.41.0",
@@ -22,12 +21,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.7",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "mocha": "^10.0.0",
     "codecov": "^3.8.3"
-  },
-  "nyc": {
-    "reporter": ["lcov", "text-summary"],
-    "exclude": ["node_modules", "tests/**/*.test.js"]
   }
 }
