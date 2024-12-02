@@ -4,7 +4,7 @@
   "description": "LegalOps CI-Pipeline",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./database/tests/reservas.test.js"
+    "test": "mocha ./database/tests/reservas.test.js--coverage"
   },
   "devDependencies": {
     "mocha": "^10.8.2",
