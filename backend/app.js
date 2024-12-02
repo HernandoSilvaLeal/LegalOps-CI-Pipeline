@@ -14,8 +14,7 @@ Sentry.init({
   tracesSampleRate: 1.0, // Ajusta según lo que desees rastrear.
   profilesSampleRate: 1.0, // Ajusta según el nivel de perfiles que quieras capturar.
 });
-const { validarReserva } = require('./database/reservas'); // Importa la función de validación
-
+const { validarReserva } = require(__dirname + '/database/reservas.js');
 // Ruta para manejar reservas
 app.post('/api/reservas', (req, res) => {
   const reserva = req.body; // Obtiene los datos enviados desde el frontend
