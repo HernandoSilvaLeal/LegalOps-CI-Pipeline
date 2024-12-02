@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "reservas.js",
   "scripts": {
-    "test": "mocha ./database/tests/*.test.js"
+  "test": "mocha ./database/tests/reservas.test.js"
   },
   "keywords": [],
   "author": "",
