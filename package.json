@@ -1,16 +1,19 @@
 {
-  "name": "legalops-ci-pipeline",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "LegalOps-CI-Pipeline",
+  "description": "Backend for LegalOps CI",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
     "test": "mocha ./database/tests/reservas.test.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "mocha": "^10.8.2"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC"
 }
-

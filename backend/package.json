@@ -1,13 +1,22 @@
 {
   "name": "legalops-ci-pipeline",
   "version": "1.0.0",
-  "description": "LegalOps-CI-Pipeline",
+  "description": "LegalOps CI-Pipeline",
   "main": "index.js",
   "scripts": {
     "test": "mocha ./database/tests/reservas.test.js"
   },
   "devDependencies": {
-    "mocha": "^10.8.2"
+    "mocha": "^10.8.2",
+    "codecov": "^3.8.3",
+    "nyc": "^17.1.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "cors": "^2.8.5",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "keywords": [],
   "author": "",
