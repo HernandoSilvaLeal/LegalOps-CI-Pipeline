@@ -14,6 +14,15 @@ Sentry.init({
   tracesSampleRate: 1.0, // Ajusta según lo que desees rastrear.
   profilesSampleRate: 1.0, // Ajusta según el nivel de perfiles que quieras capturar.
 });
+// Generación del error intencional
+try {
+  // Intentamos llamar una función que no existe (esto generará un error)
+  foo();  // 'foo' no está definida
+} catch (e) {
+  // Captura el error y lo envía a Sentry
+  Sentry.captureException(e);
+  console.log('Error capturado por Sentry');
+}
 // Swagger configuration
 const swaggerOptions = {
   definition: {
