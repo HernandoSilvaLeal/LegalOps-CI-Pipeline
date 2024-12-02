@@ -1,9 +1,9 @@
 {
-  "name": "sistema-de-reservas-arquitectura-de-software",
-  "version": "1.0.0",
   "main": "reservas.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha", 
+    "coverage": "nyc npm test",
+    "upload-coverage": "nyc report --reporter=text-lcov | codecov",
     "dev": "nodemon app.js",
     "start": "node app.js"
   },
@@ -16,12 +16,18 @@
     "@sentry/profiling-node": "^8.41.0",
     "cors": "^2.8.5",
     "express": "^4.21.0",
-    "npm": "^10.9.1",
-    "start": "^5.1.0",
+    "npm": "^10.1.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "nyc": "^15.1.0",
+    "mocha": "^10.0.0",
+    "codecov": "^3.8.3"
+  },
+  "nyc": {
+    "reporter": ["lcov", "text-summary"],
+    "exclude": ["node_modules", "tests/**/*.test.js"]
   }
 }

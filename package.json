@@ -1,0 +1,17 @@
+{
+  "name": "legalops-ci-pipeline",
+  "version": "1.0.0",
+  "description": "```\r LegalOps-CI-Pipeline\r ├─ .gitignore\r ├─ backend\r │  ├─ app.js\r │  ├─ notificaciones.js\r │  └─ package.json\r ├─ database\r │  └─ reservas.json\r ├─ frontend\r │  ├─ abogados.css\r │  ├─ abogados.html\r │  ├─ abogados.js\r │  ├─ index.html\r │  ├─ miStyles.css\r │  ├─ onloadTable.js\r │  └─ reservas.js\r └─ README.md",
+  "main": "index.js",
+  "devDependencies": {
+    "codecov": "^3.8.3",
+    "mocha": "^10.8.2",
+    "nyc": "^17.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

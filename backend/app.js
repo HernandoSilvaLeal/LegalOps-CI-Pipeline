@@ -14,6 +14,19 @@ Sentry.init({
   tracesSampleRate: 1.0, // Ajusta según lo que desees rastrear.
   profilesSampleRate: 1.0, // Ajusta según el nivel de perfiles que quieras capturar.
 });
+const { validarReserva } = require('./database/reservas'); // Importa la función de validación
+
+// Ruta para manejar reservas
+app.post('/api/reservas', (req, res) => {
+  const reserva = req.body; // Obtiene los datos enviados desde el frontend
+  const esValida = validarReserva(reserva); // Valida los datos
+
+  if (esValida) {
+    res.status(200).json({ message: 'Reserva válida', reserva }); // Respuesta de éxito
+  } else {
+    res.status(400).json({ message: 'Reserva inválida' }); // Respuesta de error
+  }
+});
 // Generación del error intencional
 try {
   // Intentamos llamar una función que no existe (esto generará un error)
