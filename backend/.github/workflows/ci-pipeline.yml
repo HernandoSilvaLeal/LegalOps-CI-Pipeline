@@ -28,12 +28,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Ejecutar las pruebas y recolectar cobertura
+      # Paso 4: Ejecutar las pruebas y recolectar cobertura de código
       - name: Run tests and collect coverage
-        run: npm run test -- --coverage
+        run: npm run test -- --coverage  # Ejecuta las pruebas y genera el reporte de cobertura
 
-      # Paso 5: Subir los resultados de cobertura a Codecov
+      # Paso 5: Subir la cobertura a Codecov
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}  # Token para Codecov, asegúrate de configurarlo en los secretos de GitHub
+          token: ${{ secrets.CODECOV_TOKEN }}  # Usa el token de Codecov almacenado en los secretos
