@@ -1,6 +1,5 @@
 name: Node.js CI Pipeline
 
-# El workflow se ejecutará en los eventos push y pull_request en la rama main
 on:
   push:
     branches:
@@ -12,28 +11,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # Paso 1: Hacer checkout del código del repositorio
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Paso 2: Configurar Node.js en la versión deseada (en este caso, la versión 14)
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
 
-      # Paso 3: Instalar las dependencias del proyecto
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Ejecutar las pruebas y recolectar cobertura de código
       - name: Run tests and collect coverage
-        run: npm run test -- --coverage  # Ejecuta las pruebas y genera el reporte de cobertura
+        run: npm run test -- --coverage
 
-      # Paso 5: Subir la cobertura a Codecov
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v2
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}  # Usa el token de Codecov almacenado en los secretos
+         token: ${ secrets.CODECOV_TOKEN }
